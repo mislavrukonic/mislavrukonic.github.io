@@ -1,11 +1,31 @@
+/* -------------------------------------------------------------------------- */
+/* --- Spooky Theme Variables (VS Code Palette) --- */
+/* -------------------------------------------------------------------------- */
 :root {
+    --color-primary-dark: #1a1a2e;
+    /* Deep Graveyard Background */
+    --color-text-light: #e0e0e0;
+    /* Ghostly White Text */
+    --color-accent-pumpkin: #ff6f00;
+    /* Bright Orange Accent */
+    --color-secondary-purple: #a850a8;
+    /* Muted Magenta/Purple */
+    --color-card-bg: #33222e;
+    /* Dark Card/Highlight Background */
+    --color-link-hover: #ff3333;
+    /* Blood Red for Link Hover */
+    --color-success-green: #61ff33;
+    /* <-- NEW: High-Visibility Green */
+
+    /* Retained existing Vite font settings */
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    /* Enforce Dark Theme */
+    color-scheme: dark;
+    color: var(--color-text-light);
+    background-color: var(--color-primary-dark);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -13,29 +33,38 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Base Link Styling - Themed */
 a {
     font-weight: 500;
-    color: #646cff;
+    color: var(--color-secondary-purple);
+    /* Themed link color */
     text-decoration: inherit;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #535bf2;
+    color: var(--color-link-hover);
+    /* Themed hover color */
 }
 
+/* Body Styling - Resetting to standard web page layout */
 body {
     margin: 0;
-    display: flex;
-    place-items: center;
+    padding: 0;
+    display: block;
+    /* Overrides the default 'display: flex; place-items: center;' */
     min-width: 320px;
     min-height: 100vh;
 }
 
+/* H1 Styling - Themed */
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+    color: var(--color-accent-pumpkin);
 }
 
+/* Button Styling - Retained and updated hover border */
 button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -49,7 +78,7 @@ button {
 }
 
 button:hover {
-    border-color: #646cff;
+    border-color: var(--color-accent-pumpkin);
 }
 
 button:focus,
@@ -57,17 +86,4 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
-}
+/* Removed light media query as we are enforcing the dark theme */
