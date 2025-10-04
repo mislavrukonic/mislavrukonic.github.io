@@ -3,7 +3,7 @@ import interests from "../data/interests"
 
 function Interests() {
     return (
-        <section id="skills" className="skills-section">
+        <section id="interests" className="skills-section">
             <h2>Currently Interested In & Learning</h2>
             <ul className="skills-list">
                 {interests.map((interest) => (
