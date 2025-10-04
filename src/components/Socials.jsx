@@ -1,5 +1,6 @@
 import React from 'react';
 import socials from '../data/socials';
+import SimpleIconRenderer from './SimpleIconHelper';
 
 function Socials() {
     return (
@@ -8,6 +9,8 @@ function Socials() {
             <div className="socials-list">
                 {socials.map((social) => (
                     <h3 key={social.id} className="social-item">
+                        <SimpleIconRenderer iconData={social.icon} size={28} />
+                        {' '}
                         {social.platform}:
                         {' '}
                         <a
@@ -16,7 +19,7 @@ function Socials() {
                             rel="noopener noreferrer"
                             className="social-link"
                         >
-                            {social.handle}
+                            <span>{social.handle}</span>
                         </a>
                     </h3>
                 ))}
