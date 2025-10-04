@@ -1,6 +1,9 @@
 /* -------------------------------------------------------------------------- */
 /* --- Spooky Theme Variables (VS Code Palette) --- */
 /* -------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Fira+Sans:wght@300;400;500;700&display=swap');
+
 :root {
     --color-primary-dark: #1a1a2e;
     /* Deep Graveyard Background */
@@ -18,7 +21,8 @@
     /* <-- NEW: High-Visibility Green */
 
     /* Retained existing Vite font settings */
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    --font-heading: 'Inconsolata', monospace;
     line-height: 1.5;
     font-weight: 400;
 
@@ -58,8 +62,10 @@ body {
 }
 
 /* H1 Styling - Themed */
-h1 {
+h1,
+h2 {
     font-size: 3.2em;
+    font-family: var(--font-heading);
     line-height: 1.1;
     color: var(--color-accent-pumpkin);
 }
@@ -87,3 +93,44 @@ button:focus-visible {
 }
 
 /* Removed light media query as we are enforcing the dark theme */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    /* Matches background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    /* Allows clicks through once faded */
+}
+
+/* GIF Loader Image Styles */
+.spinner {
+    width: 100px;
+    /* Increased size for a typical GIF */
+    height: 100px;
+    margin-bottom: 1rem;
+    /* Removed CSS animation properties */
+}
+
+/* Removed @keyframes spin */
+
+.loading-text {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
