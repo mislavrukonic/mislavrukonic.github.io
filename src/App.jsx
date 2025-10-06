@@ -19,12 +19,9 @@ function App() {
     const [isFading, setIsFading] = useState(false);
 
     useEffect(() => {
-        // Function to handle the transition logic
         const handleLoad = () => {
-            // Start the fade-out transition immediately after all resources load
             setIsFading(true);
 
-            // After the fade transition time (0.5s from CSS), remove the component
             const removeTimer = setTimeout(() => {
                 setIsLoading(false);
             }, 500);
@@ -32,15 +29,12 @@ function App() {
             return () => clearTimeout(removeTimer);
         };
 
-        // If the page is already fully loaded (e.g., if the user is debugging or resources load instantly)
         if (document.readyState === 'complete') {
             handleLoad();
         } else {
-            // Wait for all external resources (images, fonts, CSS) to load
             window.addEventListener('load', handleLoad);
         }
 
-        // Cleanup function for the event listener
         return () => {
             window.removeEventListener('load', handleLoad);
         };

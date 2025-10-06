@@ -18,15 +18,13 @@
     --color-link-hover: #ff3333;
     /* Blood Red for Link Hover */
     --color-success-green: #61ff33;
-    /* <-- NEW: High-Visibility Green */
+    /* Slime Green */
 
-    /* Retained existing Vite font settings */
     font-family: 'Fira Sans', sans-serif;
     --font-heading: 'Inconsolata', monospace;
     line-height: 1.5;
     font-weight: 400;
 
-    /* Enforce Dark Theme */
     color-scheme: dark;
     color: var(--color-text-light);
     background-color: var(--color-primary-dark);
@@ -48,7 +46,6 @@ a {
 
 a:hover {
     color: var(--color-link-hover);
-    /* Themed hover color */
 }
 
 /* Body Styling - Resetting to standard web page layout */
@@ -56,12 +53,11 @@ body {
     margin: 0;
     padding: 0;
     display: block;
-    /* Overrides the default 'display: flex; place-items: center;' */
     min-width: 320px;
     min-height: 100vh;
 }
 
-/* H1 Styling - Themed */
+/* H Styling - Themed */
 h1,
 h2 {
     font-size: 3.2em;
@@ -92,7 +88,6 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Removed light media query as we are enforcing the dark theme */
 
 .loading-overlay {
     position: fixed;
@@ -101,7 +96,6 @@ button:focus-visible {
     width: 100%;
     height: 100%;
     background-color: var(--color-background);
-    /* Matches background */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,19 +108,14 @@ button:focus-visible {
 .loading-overlay.fade-out {
     opacity: 0;
     pointer-events: none;
-    /* Allows clicks through once faded */
 }
 
 /* GIF Loader Image Styles */
 .spinner {
     width: 100px;
-    /* Increased size for a typical GIF */
     height: 100px;
     margin-bottom: 1rem;
-    /* Removed CSS animation properties */
 }
-
-/* Removed @keyframes spin */
 
 .loading-text {
     font-family: var(--font-heading);

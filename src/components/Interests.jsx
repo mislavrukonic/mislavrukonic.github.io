@@ -1,4 +1,4 @@
-
+import React from "react";
 import interests from "../data/interests"
 
 function Interests() {
