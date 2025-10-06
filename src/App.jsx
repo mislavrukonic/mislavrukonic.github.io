@@ -11,6 +11,7 @@ import Interests from './components/Interests';
 import Socials from './components/Socials';
 import Footer from './components/Footer';
 import LoadingScreen from './components/Loader';
+import CursorTrail from './components/CursorTrailer';
 import './App.css';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
                 <Contact />
             </main>
             <Footer />
+            <CursorTrail />
         </div>
     );
 }

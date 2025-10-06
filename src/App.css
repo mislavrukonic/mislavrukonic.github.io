@@ -369,6 +369,24 @@ h2 {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Cursor Trail Styling */
+/* -------------------------------------------------------------------------- */
+
+.cursor-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-success-green);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.1s, height 0.1s;
+    box-shadow: 0 0 5px var(--color-accent-pumpkin);
+    z-index: 9999;
+}
+
+
+/* -------------------------------------------------------------------------- */
 /* 4. Media Queries (Responsiveness) (Re-integrated) */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
