@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/mislavrukonic/mislavrukonic.github.io#readme",
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "simple-icons": "^15.16.0"
