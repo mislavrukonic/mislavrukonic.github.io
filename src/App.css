@@ -49,6 +49,13 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--color-accent-pumpkin);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.5s;
+}
+
+.mr-3 {
+    margin-right: 0.5rem;
 }
 
 .nav-links {

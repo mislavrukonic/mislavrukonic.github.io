@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import headerIcon from '../data/headerIcon';
+import SimpleIconRenderer from './SimpleIconHelper';
 
 function Header() {
 
@@ -15,7 +17,14 @@ function Header() {
     return (
         <header className="header">
             <nav className="navbar">
-                <a href="#" className="logo">Mislav Rukonić</a>
+                <a href="#" className="logo">
+                    <span className='mr-3'>
+                        {headerIcon.map((icon) => (
+                            <SimpleIconRenderer key={icon.id} iconData={icon.icon} size={28} />
+                        ))}
+                    </span>
+                    Mislav Rukonić
+                </a>
                 <button
                     className={`menu-toggle ${isMenuOpen ? 'is-open' : ''}`}
                     onClick={toggleMenu}
@@ -36,7 +45,7 @@ function Header() {
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+        </header >
     );
 }
 
