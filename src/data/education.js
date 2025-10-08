@@ -11,7 +11,7 @@ const education = [
         id: 2,
         title: "Bachelor of Science in Web and Mobile Computing/Information Technologies",
         school: "Rochester Institute of Technology",
-        description: "Theis was project based; I was the lead backend engineer at Bugatti Rimac for the `Rimac Race` project.",
+        description: "Theis was project based; I was the lead backend engineer at Bugatti Rimac for the \"Rimac Race\" project.",
         years: "2019 - 2023",
         thesis: ""
     },
