@@ -16,7 +16,7 @@ const projects = [
     {
         id: 3,
         title: "Level Designer and Jack of All Trades at TalTech GameJam 2024",
-        image: "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/470217930_122190314282182299_1691726733536722367_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=kNn8zvMrLUwQ7kNvwHH28qp&_nc_oc=AdnbP7zf3LkT6uw19FhsZ9Ue9TV7_OGT9rKxv_0eAy9n37uyTYul6iqsKDHNNjeHWsw&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=7LLffS9Z1UQRr6lvR1c0-A&oh=00_Afeg8zLOQJeJf52gSI6KWXbMab_VeDkXCNPleOD7pA5FWw&oe=68E733B9",
+        image: "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/470217930_122190314282182299_1691726733536722367_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=uQQB1mVWvlEQ7kNvwEVaPiO&_nc_oc=AdmBYP-v_6cicww5EogQPk57G9ZR3KWZ2xeHz6qKIx0pSRG9QoM0HPz4sZbGfCxumRo&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=_-mfSmemkN0YX4w2pTPbdQ&oh=00_AfeL20usQv91O8N35WRk_GGusIZ_K66jGXqrKPXCkYUPQA&oe=68FF5F39",
         description: "Konnrad's Unusual Breakfast. Made with Unity.",
         link: "https://lucijaf.itch.io/konnrads-unusual-breakfast"
     },

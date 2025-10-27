@@ -274,6 +274,7 @@ h2 {
 
 .contact-form {
     max-width: 600px;
+    width: auto;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -293,7 +294,7 @@ h2 {
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    width: auto;
     padding: 1rem;
     background-color: var(--color-card-bg);
     border: 2px solid var(--color-card-bg);
