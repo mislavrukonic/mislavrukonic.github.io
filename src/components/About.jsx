@@ -5,7 +5,8 @@ function About() {
         <section id="about" className="about-section">
             <h2>About Me</h2>
             <h3>
-                Master of Science in Engineering (Software Engineering). Looking for work in Software Engineering. Open to hybrid/on-site work.
+                Fullstack developer at aiKATE. Master of Science in Engineering (Software
+                Engineering).
             </h3>
         </section>
     );
