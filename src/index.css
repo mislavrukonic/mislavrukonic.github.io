@@ -4,6 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Fira+Sans:wght@300;400;500;700&display=swap");
 
+/* Ensure all elements calculate width correctly including padding/borders */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --color-primary-dark: #1a1a2e;
   /* Deep Graveyard Background */
@@ -56,6 +61,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden; /* Prevents horizontal scroll on small screens */
+  width: 100%;
 }
 
 /* H Styling - Themed */
@@ -65,6 +71,8 @@ h2 {
   font-family: var(--font-heading);
   line-height: 1.1;
   color: var(--color-accent-pumpkin);
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 /* Button Styling - Retained and updated hover border */
@@ -136,7 +144,7 @@ button:focus-visible {
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 .app-container {
@@ -144,7 +152,6 @@ button:focus-visible {
   margin: 0 auto;
   padding: 0 1rem;
   width: 100%;
-  box-sizing: border-box;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -244,7 +251,12 @@ button:focus-visible {
   align-items: center;
   min-height: 100vh;
   flex-direction: column;
-  box-sizing: border-box;
+  width: 100%;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
 }
 
 .hero-content h2 {
@@ -270,6 +282,7 @@ button:focus-visible {
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .cta-button:hover {
@@ -284,13 +297,13 @@ button:focus-visible {
 /* Sections General */
 /* -------------------------------------------------------------------------- */
 main section {
-  padding: 6rem 1.5rem;
+  padding: 6rem 1rem;
   text-align: center;
   border-bottom: 1px solid var(--color-card-bg);
   width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
+  max-width: 100%;
   margin: 0 auto;
+  overflow: hidden; /* Contain children */
 }
 
 h2 {
@@ -301,6 +314,7 @@ h2 {
   display: inline-block;
   padding-bottom: 0.5rem;
   text-shadow: 0 0 5px rgba(168, 80, 168, 0.5);
+  max-width: 90%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -308,12 +322,12 @@ h2 {
 /* -------------------------------------------------------------------------- */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
+  justify-items: center; /* Center items within grid tracks */
 }
 
 .portfolio-item {
@@ -328,6 +342,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 350px; /* Prevent cards from getting too wide on tablet */
 }
 
 .portfolio-item:hover {
@@ -354,6 +370,7 @@ h2 {
   margin: 0 auto;
   padding: 0;
   max-width: 800px;
+  width: 100%;
 }
 
 .skills-list ul {
@@ -363,6 +380,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .skill-item {
@@ -401,7 +419,6 @@ h2 {
   border: 2px solid var(--color-card-bg);
   color: var(--color-text-light);
   border-radius: 8px;
-  box-sizing: border-box;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -410,6 +427,7 @@ h2 {
 .footer {
   padding: 3rem 1rem;
   background-color: #0d0d1a;
+  width: 100%;
 }
 
 .footer-content {
@@ -419,6 +437,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -480,6 +499,11 @@ h2 {
 
   .portfolio-grid {
     grid-template-columns: 1fr; /* Single column on very small screens */
+    padding: 0 0.5rem;
+  }
+
+  .portfolio-item {
+    max-width: 100%;
   }
 
   .hero-content h2 {
@@ -488,5 +512,16 @@ h2 {
 
   .hero-content p {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .portfolio-grid {
+    gap: 1.5rem;
+  }
+
+  .skill-item {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 }
