@@ -5,8 +5,7 @@ const interests = [
     { id: 4, name: "RTOS" },
     { id: 5, name: "Microcontrollers (Arduino, ESP32 Thing, etc)" },
     { id: 6, name: "NoSQL (MongoDB)" },
-    { id: 7, name: "JavaScript/TypeScript" },
-    { id: 8, name: "Pinball and Arcades" }
+    { id: 7, name: "Pinball and Arcades" }
 ];
 
 export default interests;
