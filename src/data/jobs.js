@@ -3,10 +3,10 @@ const jobs = [
         id: 1,
         title: "Fullstack developer at aiKATE",
         company: "aiKATE",
-        typeOfJob: "Full time",
-        duration: "Feb 2026 - May 2026",
+        typeOfJob: "Contract",
+        duration: "Feb 2026 - May 2026 · 4 mos",
         location: "Zagreb, Croatia",
-        description: "Creating and maintaing fullstack software for a new mobile app for Vendlog. React-native, NodeJS, and mariaDB.\nRebuilt company website in Astro.",
+        description: "Created and maintained fullstack software for a brand new mobile app for Vendlog. React-Native, NodeJS, and mariaDB.\nComplete overhaul of company website, designed with Astro and CSS.\nOptimized and created new features for main cosnumer webapp with NestJS.\nDocumented and tested numerous REST APIs from various vendors using Swagger.",
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const jobs = [
         typeOfJob: "Full-time",
         duration: "May 2021 - Feb 2023 · 1 yr 10 mos",
         location: "Zagreb, Croatia",
-        description: "Building and maintaining a customer support tool in Ruby on Rails and MySQL to optimize internal workflow.Reduced average service response time by more than 50 %.Automated generation of business metric reports",
+        description: "Built internal customer support tooling in Rails/MySQL; reduced average response time by 52%. Automated generation of business metric reports.",
     },
     {
         id: 4,
