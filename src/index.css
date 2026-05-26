@@ -88,6 +88,10 @@ button {
   transition: border-color 0.25s;
 }
 
+button:not(.submit-button):hover {
+  border-color: var(--color-accent-pumpkin);
+}
+
 button:hover {
   border-color: var(--color-accent-pumpkin);
 }
@@ -213,10 +217,29 @@ button:focus-visible {
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 3px;
+  overflow: hidden;
 }
 
 .nav-links a:hover {
   color: var(--color-accent-pumpkin);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent-pumpkin);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -281,7 +304,13 @@ button:focus-visible {
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s,
+    background-color 0.3s;
+  transform: translateY(var(--ty, 0));
   display: inline-block;
 }
 
@@ -291,6 +320,58 @@ button:focus-visible {
   box-shadow:
     0 4px 10px rgba(255, 111, 0, 0.4),
     0 0 15px var(--color-success-green);
+  --ty: -2px;
+}
+
+.cta-button .t1,
+.cta-button .t2,
+.cta-button .t3,
+.cta-button .t4 {
+  position: absolute;
+  background-color: var(--color-primary-dark);
+  opacity: 0.2;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+.cta-button .t1 {
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.cta-button .t2 {
+  width: 3px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.cta-button .t3 {
+  width: 100%;
+  height: 3px;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.cta-button .t4 {
+  width: 3px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.cta-button:hover .t1,
+.cta-button:hover .t3 {
+  transform: scaleX(1);
+}
+.cta-button:hover .t2,
+.cta-button:hover .t4 {
+  transform: scaleY(1);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -335,9 +416,12 @@ h2 {
   border: 1px solid var(--color-secondary-purple);
   padding: 1.5rem;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
   transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(var(--ty, 0)) scale(var(--s, 1));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -348,9 +432,61 @@ h2 {
 
 .portfolio-item:hover {
   transform: translateY(-8px);
+  --ty: -8px;
+  --s: 1.02;
   box-shadow:
-    0 12px 25px rgba(168, 80, 168, 0.6),
-    0 0 15px rgba(168, 80, 168, 0.3);
+    0 20px 40px 0 rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(168, 80, 168, 0.4);
+}
+
+.portfolio-item .t1,
+.portfolio-item .t2,
+.portfolio-item .t3,
+.portfolio-item .t4 {
+  position: absolute;
+  background-color: var(--color-accent-pumpkin);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+.portfolio-item .t1 {
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.portfolio-item .t2 {
+  width: 3px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.portfolio-item .t3 {
+  width: 100%;
+  height: 3px;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.portfolio-item .t4 {
+  width: 3px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.portfolio-item:hover .t1,
+.portfolio-item:hover .t3 {
+  transform: scaleX(1);
+}
+.portfolio-item:hover .t2,
+.portfolio-item:hover .t4 {
+  transform: scaleY(1);
 }
 
 .portfolio-item img {
@@ -389,13 +525,63 @@ h2 {
   border-left: 5px solid var(--color-success-green);
   border-radius: 4px;
   font-size: 1.1rem;
-  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s,
+    background-color 0.2s;
+  transform: translateY(var(--ty, 0)) scale(var(--s, 1));
   cursor: default;
 }
 
 .skill-item:hover {
+  --ty: -4px;
+  --s: 1.03;
   background-color: #453846;
-  transform: scale(1.05);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(97, 255, 51, 0.2);
+}
+
+.skill-item .t1,
+.skill-item .t2,
+.skill-item .t3 {
+  position: absolute;
+  background-color: var(--color-success-green);
+  transition: transform 0.3s ease;
+  z-index: 10;
+  height: 2px;
+  width: 100%;
+  left: 0;
+}
+.skill-item .t1 {
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.skill-item .t2 {
+  width: 5px;
+  height: 100%;
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.skill-item .t3 {
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.skill-item:hover .t1,
+.skill-item:hover .t3 {
+  transform: scaleX(1);
+}
+
+.skill-item:hover .t2 {
+  transform: scaleY(1);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -438,6 +624,26 @@ h2 {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+}
+
+.footer-social-item {
+  position: relative;
+  padding-bottom: 2px;
+}
+.footer-social-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-success-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-item:hover::after {
+  transform: scaleX(1);
 }
 
 /* -------------------------------------------------------------------------- */
