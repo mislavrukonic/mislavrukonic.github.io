@@ -7,8 +7,9 @@ function About() {
             <h3>
                 Fullstack developer. Master of Science in Engineering (Software
                 Engineering). Looking for work in fullstack development.
-                Proficient in NodeJS, databases, and React native.
             </h3>
+            <br />
+            <h3>Node.js · TypeScript · PostgreSQL/mariaDB/MySQL · React Native · GraphQL · Ruby on Rails · Supabase · Docker · NestJS · Swagger · REST APIs</h3>
         </section>
     );
 }

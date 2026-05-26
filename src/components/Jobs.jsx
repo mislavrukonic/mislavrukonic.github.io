@@ -8,6 +8,8 @@ function Job() {
             <div className="portfolio-grid">
                 {jobs.map((job) => (
                     <div key={job.id} className="portfolio-item">
+                        <div className="t1"></div><div className="t2"></div>
+                        <div className="t3"></div><div className="t4"></div>
                         <h3>{job.title}</h3>
                         <h4>{job.company}</h4>
                         <p>{job.typeOfJob}</p>

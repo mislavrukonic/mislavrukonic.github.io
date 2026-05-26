@@ -8,6 +8,8 @@ function Portfolio() {
             <div className="portfolio-grid">
                 {projects.map((project) => (
                     <div key={project.id} className="portfolio-item">
+                        <div className="t1"></div><div className="t2"></div>
+                        <div className="t3"></div><div className="t4"></div>
                         <h3>{project.title}</h3>
                         <img src={project.image} alt={"No image available for this project."} />
                         <p>{project.description}</p>

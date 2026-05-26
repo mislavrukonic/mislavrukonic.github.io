@@ -8,6 +8,8 @@ function Education() {
             <div className="portfolio-grid">
                 {educations.map((education) => (
                     <div key={education.id} className="portfolio-item">
+                        <div className="t1"></div><div className="t2"></div>
+                        <div className="t3"></div><div className="t4"></div>
                         <h3>{education.title}</h3>
                         <p>{education.school}</p>
                         <p>{education.description}</p>

@@ -48,8 +48,8 @@ function App() {
             <main>
                 <Hero />
                 <About />
-                <Education />
                 <Job />
+                <Education />
                 <Portfolio />
                 <Skills />
                 <Interests />
